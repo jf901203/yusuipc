@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+
+@font-face{
+   
+   font-family: Yh;
+   src:url("../fonts/msyhbd.ttc");
+
+
+}
+
+ul,ol,li{
+
+	list-style-type: none;
+}
