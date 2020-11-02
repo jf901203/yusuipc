@@ -1,0 +1,69 @@
+.service{
+    width: 1920px;
+    background-color: #fff;
+
+}
+
+
+
+
+
+.commen-width{
+    width: 1230px;
+    margin: 0 auto;
+    
+}
+/* soft */
+.message-ware{
+    padding-top: 90px;
+    box-sizing: border-box;
+  
+
+  
+}
+.message-title{
+    font-size: 32px;
+    color: #000;
+    text-align: center;
+}
+.message-desc{
+    font-size: 28px;
+    color: #969696;
+    text-align: center;
+    margin-bottom: 80px;
+}
+.message-img{
+    display: flex;
+    justify-content: space-between;
+}
+
+.message-img-avator{
+    width: 520px;
+    margin-bottom: 80px;
+}
+
+.message-img-avator img{
+    width: 100%;
+}
+
+.message-img-desc{
+    flex-basis: 52%;
+}
+.message-img-desc h1{
+    width: 100%;
+    text-align: center;
+    color: #000;
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.message-img-desc p{
+    font-size: 16px;
+    color: #000;
+    text-indent: 20px;
+    line-height: 28px;
+}
+.message-img-title{
+    width: 100%;
+    flex-basis: 52%;
+}

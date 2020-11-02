@@ -1,0 +1,153 @@
+.service{
+    width: 1920px;
+    background-color: #fff;
+
+}
+
+
+
+
+
+/* internet */
+
+
+.internet{
+    width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 75px;
+    padding-top: 75px;
+    
+}
+.internet-title{
+    padding-bottom: 50px;
+}
+.internet-title h1{
+    font-size: 32px;
+    color: #000;
+    text-align: center;
+}
+.internet-title p{
+    color: #969696;
+    font-size: 28px;
+    text-align: center;
+}
+.internet-avator{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.internet-avator div:first-child{
+    flex-basis: 50%;
+}
+
+.internet-avator div:last-child{
+    flex-basis: 45%;
+}
+
+
+.avator-title h1{
+   font-size: 20px;
+   line-height: 28px;
+   font-weight: bold;
+}
+.avator-title p{
+    margin-bottom: 35px;
+    text-indent: 20px;
+    font-size: 16px;
+    line-height: 28px;
+}
+.avator-right-img {
+    margin-bottom: 8px;
+}
+.avator-right-img img{
+    width: 100%;
+    height: 100%;
+
+}
+.avator-right-imgs{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.avator-right-imgs{
+    flex-basis: 50%;
+   
+}
+/* cloud */
+
+.cloud{
+   background:#007eff;
+}
+.cloud-content{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    padding-top: 35px;
+}
+.cloud-avator{
+    flex-basis: 540px;
+    max-width:540px;
+}
+.cloud-avator {
+   width: 100%;
+   margin-right: 40px;
+}
+.cloud-desc{
+    flex:1;
+}
+.cloud-desc h1{
+    text-align: center;
+    color: #fff;
+    font-size: 32px;
+}
+.cloud-en{
+
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 45px;
+}
+.cloud-descript{
+    color: #fff;
+    font-size: 16px;
+    line-height: 30px;
+}
+/* erp */
+
+.erp{
+    width: 1200px;
+    padding-top: 65px;
+    padding-bottom: 60px;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.erp-avator{
+  flex-basis: 55%;
+  max-width: 648px;
+}
+.erp-avator img{
+    width: 100%;
+   -webkit-filter: drop-shadow(-15px 15px 0px #ebebeb); 
+   filter: drop-shadow(-15px 15px 0px #ebebeb); 
+}
+
+.erp-title{
+    flex-basis: 45%;
+}
+
+.erp-title h1{
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+    margin: 0;
+    line-height: 30px;
+    margin-bottom: 40px;
+}
+.erp-title p{
+    font-size: 18px;
+    line-height: 30px;
+}
