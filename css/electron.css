@@ -140,29 +140,97 @@
 .structure-icon-01{
     width: 100%;
     height: 182px;
-  
     background-image: url(../img/structure01.jpg);
     background-repeat: no-repeat;
+    display: flex;
 }
-
+.structure-icon-01-left{
+    width: 385px;
+    height: 182px;
+    position: relative;
+}
+.structure-icon-01-left p{
+   position: absolute;
+   right:70px;
+   bottom: 39px;
+   font-size: 20px;
+   color: #fff;
+}
+.structure-icon-01-right{
+    max-width: 750px;
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+.structure-icon-01-right p{
+    font-size: 20px;
+    line-height: 30px;
+}
 .structure-icon-02{
     width: 100%;
     height: 107px;
-   
     background-image: url(../img/structure02.jpg);
     background-repeat: no-repeat;
+    display: flex;
+}
+.structure-icon-02-left{
+    width: 446px;
+    height: 117px;
+    position: relative;
+}
+.structure-icon-02-left p{
+    position: absolute;
+    right:113px;
+    bottom: 40px;
+    color: #fff;
+    font-size: 20px;
+}
+.structure-icon-02-right{
+    max-width: 700px;
+}
+.structure-icon-02-right p{
+    font-size: 20px;
+    line-height: 30px;
 }
 .structure-icon-03{
     width: 100%;
     height: 104px;
- 
+    display: flex;
     background-image: url(../img/structure03.jpg);
     background-repeat: no-repeat;
+}
+.structure-icon-03-left{
+    width: 506px;
+    height: 112px;
+    position: relative;
+}
+.structure-icon-03-left p{
+    position: absolute;
+    right: 200px;
+    bottom: 36px;
+    color: #fff;
+    font-size: 20px;
+}
+.structure-icon-03-right{
+    max-width: 640px;
+}
+.structure-icon-03-right p{
+    font-size: 20px;
+    line-height: 112px;
 }
 .structure-icon-04{
     width: 100%;
     height: 90px;
-
     background-image: url(../img/structure04.jpg);
     background-repeat: no-repeat;
+    display: flex;
+}
+.structure-icon-04-left{
+    position: relative;
+    width: 560px;
+    height: 90px;
+    border:1px solid blue;
+}
+
+.structure-icon-04-left p{
+   
 }

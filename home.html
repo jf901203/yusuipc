@@ -1,0 +1,556 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>demo</title>
+    <style type="text/css">
+        #slxxk {
+            margin: 10px auto;
+            max-width: 700px;
+        }
+
+        #slxxk ul {
+            list-style: none;
+            height: 36px;
+            border-bottom: 2px solid black;
+            display: block;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #slxxk ul li {
+            float: left;
+            display: inline-block;
+            padding: 0px 15px;
+            height: 34px;
+            line-height: 34px;
+            margin-right: 5px;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            cursor: pointer;
+        }
+
+        #slxxk div {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        #slxxk ul li.slyes {
+            border-top: 2px solid black;
+            border-bottom: 2px solid white;
+        }
+
+        .slno {
+            display: none;
+        }
+
+        .paging{
+            margin-left: 450px;
+        }
+        #demo #icon{
+        	display: flex;
+        	width: 100%;
+        
+        }
+       #demo #icon li{
+           width: 20px;
+           height: 20px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background: blue;
+           padding: 0;
+           color: #fff;
+           font-size: 14px
+        }
+    </style>
+<!--     <script src="./js/jquery.js" type="text/javascript"></script>
+<script src="./js/ajax.js"></script> -->
+    <script type="text/javascript">
+    
+    // 数据源
+     var jsonObject = [
+         {connName: "萨法"},
+         {connName: "单身公害的士速递"},
+         {connName: "单身公害的士速递"},
+         {connName: "单身公害的士速递"}
+         ];
+   
+
+         
+// 分页二维数组 
+function mapArr(arr){
+         var Brr=[];
+         var Min=[];
+         arr.forEach(function(item){
+         	 if(Min.length>=2){
+	            Min=[]
+	         }
+           if(Min.length===0){
+	         	   Brr.push(Min)
+	         }
+	         Min.push(item)
+         })
+       return Brr 
+       }
+
+// 渲染数据
+var filterArr= mapArr(jsonObject)
+
+
+
+
+
+// 分页标签渲染
+
+function tab(){
+    // 清除源分页标签
+    clearPage()
+    // 创建分页标签
+    var myIcon=document.getElementById("icon");
+    filterArr.forEach(function(item,index){
+        var li = document.createElement("li");
+        li.innerHTML=index+1
+        myIcon.appendChild(li)
+    })
+    // 点击
+    clickPage()
+
+}
+
+
+// 清除旧页码
+
+function clearPage(){
+
+    var myIcon=document.getElementById("icon");
+    myIcon.innerHTML=""
+  
+}
+
+
+
+// 获取当前页码
+
+function clickPage(){
+    var myIcon=document.getElementById("icon");
+    var list=myIcon.getElementsByTagName('li');
+   for(var i=0;i<list.length;i++){
+    list[i].index = i;
+     
+    list[i].onclick=function(){
+       
+        getConnObjList(this.index)
+       
+       
+    }
+  
+
+   }
+   
+}
+
+
+        //初始化加载
+        window.onload = function () {
+            
+            var mytab = document.getElementById("slxxk");
+            var myul = mytab.getElementsByTagName("ul")[0];
+
+            var myli = myul.getElementsByTagName("li");
+
+            console.log(myli)
+
+            
+            var mydiv = mytab.getElementsByTagName("div");
+            for (i = 0, len = myli.length; i < len; i++) {
+
+                myli[i].index = i;
+
+                myli[i].onclick = function () {
+                    
+                    for (var n = 0; n < len; n++) {
+                        myli[n].className = "";
+                        mydiv[n].className = "slno";
+                    }
+                    this.className = "slyes";
+                    mydiv[this.index].className = "";
+
+                    if(this.innerHTML == "连接对象"){
+                        
+                        getConnObjList();
+                        tab()
+                        
+                    }else if(this.innerHTML == "实时访问"){
+                        getRealTimeConnList();
+                    }else if(this.innerHTML == "被动访问"){
+                        getPassiveConnList();
+
+                    }
+                }
+            }
+            
+           getConnObjList();
+           tab()
+
+           
+          
+
+        }
+
+
+        
+       
+       
+    //  清除旧结构
+      function innerNull(){
+        var objMyTable = document.getElementById("tbl");
+           var rowNum=objMyTable.rows.length
+             for (i=1;i<rowNum-1;i++){
+			         objMyTable.deleteRow(i);
+			         rowNum=rowNum-1;
+			         i=i-1;
+			     }
+          
+         
+        } 
+
+
+        //获取连接对象数据
+        function getConnObjList(index=0) {
+
+               // 清除旧结构再添加新结构
+                innerNull()
+            var randerArr =  filterArr[index]
+
+        	for(var i=0;i < randerArr.length;i++) {
+                        
+                        var objMyTable = document.getElementById("tbl");
+                        var index = objMyTable.rows.length - 1;
+                        var nextRow = objMyTable.insertRow(index);// 插入新行
+                        var objCel_0 = nextRow.insertCell(0);// 添加单元格 
+                        var objCel_1 = nextRow.insertCell(1);
+                        var objCel_2 = nextRow.insertCell(2);
+                        var objCel_3 = nextRow.insertCell(3);
+
+                        // nextRow.rowIndex -- 行索引
+                        
+                        objCel_0.innerHTML = "<input type='checkbox' name='chked' value='' />";
+
+                        objCel_1.innerHTML = randerArr[i].connName;
+
+                        objCel_2.innerHTML = "未启用";
+                        objCel_3.innerHTML = "<a href='#' onclick='delRow(this)'>删除</a>";
+
+                    }
+
+                  
+
+            /*ajaxHttp({
+                type: "GET",
+                url: '/api/wirestationuser/list',
+                data:{"page":1,"limit":100},
+                success: function (result) {
+                    var jsonObject = result.data.records;
+                    for(var i=0;i < jsonObject.length;i++) {
+                        var objMyTable = document.getElementById("tbl");
+                        var index = objMyTable.rows.length - 1;
+                        console.log("2",index)
+                        var nextRow = objMyTable.insertRow(index);// 插入新行
+                        var objCel_0 = nextRow.insertCell(0);// 添加单元格
+                        objCel_0.innerHTML = "<input type='checkbox' name='chked' value='' />";
+                        var objCel_1 = nextRow.insertCell(1);
+                        var objCel_2 = nextRow.insertCell(2);
+                        var objCel_3 = nextRow.insertCell(3);
+                        // nextRow.rowIndex -- 行索引
+                        objCel_1.innerHTML = jsonObject[i].connName;
+                        objCel_2.innerHTML = "未启用";
+                        objCel_3.innerHTML = "<a href='#' onclick='delRow(this)'>删除</a>";
+                    }
+                },
+                error:
+                    function () {
+                        alert(result.message)
+                    }
+            });*/
+        }
+        
+
+
+
+
+
+
+        //获取实时访问数据
+        function getRealTimeConnList() {
+            console.log("table2")
+        }
+        //获取被动访问数据
+        function getPassiveConnList() {
+            console.log("table3")
+        }
+        /**验证表单复选框是否有选择*/
+        function isValidChkSelect(frm) {
+            var chk = frm.chked;
+            if (chk == undefined) {
+                return;
+            }
+            var len = frm.chked.length;
+            if (chk.length == undefined) {
+                // 只有一个checkbox
+                if (chk.checked == true) {
+                    return true;
+                }
+            } else {
+                for (var i = 0; i < chk.length; i++) {
+                    if (chk[i].checked == true) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        /**选择所有文本框*/
+        function selectAll(frm) {
+            for (var i = 0; i < frm.elements.length; i++) {
+                var e = frm.elements[i];
+                if (e.name != 'chkall' && e.type == 'checkbox')
+                    e.checked = frm.chkall.checked;
+            }
+        }
+
+        /**添加新行*/
+        function addNew() {
+
+            
+
+            var objMyTable = document.getElementById("tbl");
+
+            var index = objMyTable.rows.length - 1;
+
+            var nextRow = objMyTable.insertRow(index);// 插入新行
+
+            var objCel_0 = nextRow.insertCell(0);// 添加单元格
+
+            objCel_0.innerHTML = "<input type='checkbox' name='chked' value='' />";
+
+            var objCel_1 = nextRow.insertCell(1);
+            var objCel_2 = nextRow.insertCell(2);
+            var objCel_3 = nextRow.insertCell(3);
+
+
+            // nextRow.rowIndex -- 行索引
+            objCel_1.innerHTML = "<input type='text' name='newRow" + nextRow.rowIndex + "' />";
+
+            objCel_2.innerHTML = "未启用";
+
+            objCel_3.innerHTML = "<a href='#' onclick='add(this)'>保存</a>&nbsp;<a href='#' onclick='delRow(this)'>删除</a>";
+
+            
+        }
+
+        /**删除行对象*/
+        function delRow(obj) {
+            var new_tr = obj.parentNode.parentNode;
+            console.log("new_tr",new_tr)
+            var tmp = new_tr.parentNode;
+            console.log("tmp",tmp)
+            tmp.removeChild(new_tr); // 删除子节点
+        }
+        // 添加数据
+        function add(obj) {
+           
+           // 获取到添加的值
+           var childrens =obj.parentNode.previousSibling.previousSibling.childNodes[0].value
+
+           // var connName=obj.parentNode.previousSibling.previousSibling.childNodes[0].name
+
+            var objArr={connName : childrens }
+            jsonObject.push(objArr)
+                
+                // 删除当前行
+                removeNodeTr(obj)
+                 getConnObjList()
+                 filterArr=  mapArr(jsonObject)
+                 tab()
+
+
+                 
+        }
+
+
+
+
+
+
+    
+      
+       //保存之后删除当前行
+       
+      function removeNodeTr(obj){
+       
+             var parentTB= obj.parentNode.parentNode.parentNode
+             var parentTr= obj.parentNode.parentNode 
+             parentTB.removeChild(parentTr);
+
+      }
+
+
+        /**将文本框值赋给同一行对应的复选框*/
+
+
+
+        function setValue(obj, obj_chk) {
+            console.log("1111",obj_chk.value)
+            console.log("222",obj.value)
+            obj_chk.value = obj.value;
+        }
+
+        function doSubmit(frm) {
+            if (isValidChkSelect(frm) == false) {
+                alert("选择不能少于一项");
+                return false;
+            }
+            for (var i = 0; i < document.getElementsByTagName("input").length; i++) {
+                var obj = document.getElementsByTagName("input")[i];
+                if (obj.type == "text" && obj.name.substring(0, 6) == "newRow") {
+                    var obj_chk = obj.parentNode.parentNode.childNodes[0].childNodes[0];// 复选框对象
+                    if (valid(obj, obj_chk)) {
+                        setValue(obj, obj_chk);// 同一行的文本框值 赋值给 复选框
+                        continue;
+                    } else {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        function valid(obj, obj_chk) {
+            if (obj_chk.checked) {
+                var patrn = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+                if (obj.value == "") {
+                    alert("添加的地址不能为空！");
+                    return false;
+                }
+                if (!patrn.test(obj.value)) {
+                    alert("请输入正确的邮件地址！");
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+<h3>Wire Station  <a href="/login">退出登录</a></h3>
+
+<div id="slxxk">
+    <ul>
+        <li class="slyes">连接对象</li>
+        <li>实时访问</li>
+        <li>被动访问</li>
+    </ul>
+
+
+    <div id="table1">
+
+
+        <H1>连接对象</H1>
+
+
+        <a href="#" onclick="addNew()">添加</a>
+
+
+<!--        <form method="post" action="" onsubmit="return doSubmit(this)"></form>-->
+            <table id="tbl" border="1" cellpadding="4" style="border-collapse: collapse" width="100%">
+                <tr>
+                    <td><input type="checkbox" name='chkall' onclick="selectAll(this.form)"/>全部选择</td>
+                    <td>交互系统</td>
+                    <td>状态</td>
+                    <td>操作</td>
+                </tr>
+
+
+                <tr>
+                    <td colspan="5">
+                        <input type="submit" value="提交" name="B1">
+                        <!--<div class="paging">
+                            <span onclick="page_click(this)"><<</span>
+                            <span onclick="page_click(this)"><</span>
+                            第<input type="button" value="1" readonly="readonly">页
+                            共<input type="button"  value="1" readonly="readonly">页
+                            <span onclick="page_click(this)">></span>
+                            <span onclick="page_click(this)">>></span>
+                        </div>-->
+                    </td>
+                </tr>
+            </table>
+            <div id="demo" style="display: block;">
+                <ul id="icon"></ul>
+              
+            </div>
+            
+
+    </div>
+
+    <div id="table2" class="slno">
+        <H1>实时访问</H1>
+        <a href="#" onclick="addNew()">添加</a>
+        <form method="post" action="" onsubmit="return doSubmit(this)">
+            <table id="tb2" border="1" cellpadding="4" style="border-collapse: collapse" width="100%">
+                <tr>
+                    <td><input type="checkbox" name='chkall' onclick="selectAll(this.form)"/>全部选择</td>
+                    <td>交互系统1</td>
+                    <td>交互系统2</td>
+                    <td>状态</td>
+                    <td>操作</td>
+                </tr>
+                <!--        <tr>
+                            <td>
+                                <input type="checkbox" name="chked" value="mailfrom@gmail.com">
+                            </td>
+                            <td>mailfrom@gmail.com</td>
+                        </tr>-->
+                <tr>
+                    <td colspan="5">
+                        <input type="submit" value="提交" name="B1">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div id="table3" class="slno">
+        <H1>被动访问</H1>
+        <a href="#" onclick="addNew()">添加</a>
+        <form method="post" action="" onsubmit="return doSubmit(this)">
+            <table id="tb3" border="1" cellpadding="4" style="border-collapse: collapse" width="100%">
+                <tr>
+                    <td><input type="checkbox" name='chkall' onclick="selectAll(this.form)"/>全部选择</td>
+                    <td>交互系统1</td>
+                    <td>交互系统2</td>
+                    <td>状态</td>
+                    <td>操作</td>
+                </tr>
+                <!--        <tr>
+                            <td>
+                                <input type="checkbox" name="chked" value="mailfrom@gmail.com">
+                            </td>
+                            <td>mailfrom@gmail.com</td>
+                        </tr>-->
+                <tr>
+                    <td colspan="5">
+                        <input type="submit" value="提交" name="B1">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+
