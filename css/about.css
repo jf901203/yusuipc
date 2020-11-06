@@ -1,0 +1,368 @@
+
+.about{
+    width: 1920px;
+    background-color: #ffffff;
+    margin-top: 90px;
+}
+
+.company{
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.company-nav{
+    width: 1200px;
+    margin-bottom: 50px;
+}
+
+.company-list{
+    margin: 0;
+    padding:0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.company-list-item{
+    flex-basis: 218px;
+}
+.company-list-item a{
+    display: flex;
+    width: 100%;
+    background-color: #c0c0c2;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.company-list-item .active-bg{
+  background-color: #353e89;
+}
+
+/* profile */
+.profile{
+    width: 100%;
+    padding-bottom: 100px;
+}
+.profile-title{
+    text-align: center;
+}
+
+.profile-title-ch{
+    font-size: 30px;
+    font-weight: bold;
+    background-image: url(../img/company.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.profile-title-en{
+    font-size: 24px;
+    color: #666666;
+}
+
+.profile-avator{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding-bottom: 100px;
+}
+.profile-avator-img{
+    flex-basis: 673px;
+}
+.profile-avator-img img{
+    width: 100%;
+}
+.profile-avator-title{
+    flex-basis: 500px;
+}
+
+.profile-avator-title h1{
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.profile-avator-title p{
+    font-size: 16px;
+    line-height: 36px;
+    color: #333333;
+}
+.profile-avator-active{
+    display: inline-block;
+    width: 195px;
+    font-size: 20px;
+    line-height: 20px;
+    text-decoration: none;
+    color: #2d3896;
+    border:1px solid #a6a6a6;
+    text-align: center;
+    padding: 15px 0px;
+    margin-top: 40px;
+    border-radius: 5px;
+}
+
+.profile-avator-active:hover{
+    text-decoration: none;
+    color: #2d3896;
+}
+
+/* history */
+
+.history{
+    width: 100%;
+    background-image: url(../img/history_01.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.history-title{
+    width: 1200px;
+    margin:0 auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.history-title-ch{
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    background-image: url(../img/company01.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.history-title-en{
+    font-size: 16px;
+    color: #fff;
+}
+
+.history-content{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+.swiper-slide{
+   color: #fff;
+}
+
+.prev{
+    color: #fff;
+    position: absolute;
+    top: 80%;
+    left: 90px;
+    transform:rotate(-90deg);
+}
+
+.next{
+    transform:rotate(-90deg);
+    top: 20%;
+    left: 90px;
+    color: #fff;
+}
+
+.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 6px 0px;
+    display: block;
+    width: 200px;
+    background: transparent;
+    border-radius: 0px;
+    padding: 10px 0px;
+    height: 50px;
+    color: #a7b2e2;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.swp3{
+    left: 0;
+}
+
+.swiper-pagination-bullet-active{
+    color: #fff;
+}
+.swiper-slide{
+    position: relative;
+   
+}
+.slide-avator{
+    width: 790px;
+    position: absolute;
+    top: 50%;
+    right: -35%;
+    transform: translate(-50%,-50%);
+   
+}
+.slide-img-desc{
+    color: #fff;
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
+/* advantages */
+
+.advantages{
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+.advantages-title{
+    text-align: center;
+}
+.advantages-title-ch{
+    font-size: 30px;
+    font-weight: bold;
+    background-image: url(../img/company.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.advantages-title-en{
+    font-size:16px;
+    color:#666666;
+    line-height: 45px;
+}
+.advantages-avator{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.advantages-avator-item{
+    flex-basis: 380px;
+    margin-bottom: 20px;
+    box-shadow: #e1e1e1 1px 1px 5px 2px ;
+}
+
+.advantages-avator-items img{
+    width: 100%;
+}
+
+.advantages-avator-title{
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+.advantages-avator-title h1{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.advantages-avator-title p{
+    font-size: 16px;
+    line-height: 30px;
+}
+
+/* certificate */
+.certificate{
+    width: 1920px;
+    background-image: url(../img/certificate.jpg);
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    padding-top: 20px;
+}
+.certificate-content{
+    width: 1200px;
+    margin:0 auto;
+ 
+}
+.certificate-title{
+    text-align: center;
+    
+    
+}
+.certificate-title-ch{
+    font-size: 30px;
+    color: #fff;
+    background-image: url(../img/company01.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.certificate-title-en{
+    color: #a2b2e7;
+}
+.certificate-banner{
+    width: 100%;
+    position: relative;
+}
+
+.swiper4 {
+    position: relative;
+    width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+  }
+.slide-itme {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms;
+    transform: scale(0.8);
+  }
+.swiper-slide-active,
+.swiper-slide-duplicate-active{
+    transform: scale(1);
+     }
+
+.slide-itme img{
+    width: 100%;
+}
+
+.swiper_btn{
+    color:#62719e;
+    outline: none;
+    width: 60px;
+    height: 60px;
+    background-color:#8da3e2;
+    border-radius: 50%;
+}
+
+.swiper_btn:after{
+    font-size: 20px;
+}
+
+/* address */
+
+
+.address{
+    margin: 0 auto;
+    width: 1200px;
+    padding-top: 90px;
+    padding-bottom: 60px;
+}
+
+.address-title{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.address-title-ch{
+    font-size: 30px;
+    font-weight: bold;
+    background-image: url(../img/company.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.address-title-en{
+   font-size: 16px;
+   color: #666666;
+}
+
+.map{
+    width:1200px;
+    height:580px;
+    border:#ccc solid 1px;
+    font-size:12px;
+    border:#ccc solid 1px;
+    
+}

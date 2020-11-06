@@ -228,9 +228,51 @@
     position: relative;
     width: 560px;
     height: 90px;
-    border:1px solid blue;
+
 }
 
 .structure-icon-04-left p{
+     position: absolute;
+     right: 245px;
+     bottom: 30px;
+     font-size: 20px;
+     color: #fff;
+}
+.structure-icon-04-right{
+    max-width: 580px;
+}
+.structure-icon-04-right p{
    
+    line-height: 90px;
+    font-size: 20px;
+
+}
+
+/* basic */
+
+.basic{
+    width: 1200px;
+    margin: 0 auto;0
+}
+.basic-title{
+    text-align: center;
+    padding-bottom: 150px;
+}
+
+.basic-title-ch{
+    font-size: 32px;
+    color: #000;
+    margin-bottom: 20px;
+}
+.basic-title-en{
+    font-size: 24px;
+    line-height: 20px;
+    color: #969696;
+}
+
+.basic-table{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 55px;
+     
 }

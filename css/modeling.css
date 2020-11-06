@@ -1,0 +1,218 @@
+.modeling{
+    width: 1920px;
+    background-color: #fff;
+}
+.field{
+    
+    width: 1200px;
+    margin: 0 auto;
+
+}
+.field-title{
+    text-align: center;
+}
+.field-title-ch{
+    font-size: 30px;
+    line-height: 48px;
+    color: #000;
+}
+.field-title-en{
+    font-size: 24px;
+    line-height: 48px;
+    color: #000;
+    
+}
+.field-avator{
+    position: relative;
+    padding-top: 80px;
+}
+.avator-item{
+    display: flex;
+}
+.avator-margin{
+    margin-right: 20px;
+}
+.avator-title{
+    max-width: 512px;
+}
+.avator-img-01{
+    position: relative;
+    top: -40px;
+    width: 634px;
+    height: 332px;
+}
+.avator-img-02{
+    position: relative;
+    top: -80px;
+    width: 634px;
+    height: 332px;
+}
+.avator-img-03{
+    position: relative;
+    top: -120px;
+    width: 634px;
+    height: 332px;
+}
+.avator-title h1{
+    margin: 0px;
+    color: #1e79e4;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.avator-title p{
+    font-size: 16px;
+    line-height: 24px;
+}
+.avator-img img{
+    border: 1px solid #fff;;
+}
+
+/* surveying */
+
+.surveying{
+    width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 90px;
+}
+.surveying-tile{
+    text-align: center;
+    padding-bottom: 100px;
+}
+.surveying-tile-ch{
+    font-size: 30px;
+    line-height: 48px;
+}
+.surveying-tile-en{
+    font-size: 24px;
+    line-height: 48px;
+}
+.surveying-avator{
+    width: 100%;
+    display: flex;
+}
+
+.surveying-avato-img{
+    width: 680px;
+    height: 645px;
+    margin-right: 30px;
+}
+.surveying-avato-img img{
+    width: 100%;
+}
+
+.surveying-avator-desc{
+    max-width: 480px;
+}
+
+.surveying-avator-desc p{
+    font-size: 16px;
+    line-height: 48px;
+}
+
+.application{
+    width: 100%;
+    background-image: url(../img/application.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.application-content{
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 70px;
+    padding-bottom: 60px;
+}
+.application-container{
+    max-width: 740px;
+}
+.application-title{
+    text-align: center;
+}
+.application-title-ch{
+    font-size: 36px;
+    line-height: 48px;
+    color: #fff;
+    
+}
+.application-title-en{
+   font-size: 24px;
+   color: #fff;
+}
+
+.application-desc p{
+    line-height: 48px;
+    color: #fff;
+    line-height: 48px;
+}
+
+/* topographic */
+
+.topographic{
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding-bottom: 80px;
+}
+
+.topographic-title{
+    padding-top: 80px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+.topographic-title-ch{
+    font-size: 30px;
+    line-height: 48px;
+}
+.topographic-title-en{
+    font-size: 24px;
+    line-height: 48px;
+}
+.topographic-title-desc{
+    font-size: 16px;
+    line-height: 48px;
+}
+.topographic-avator{
+    width: 100%;
+}
+.topographic-avator-img{
+    width: 100%;
+    height: 585px;
+    margin-bottom: 60px;
+}
+.topographic-avator-img img{
+    width: 100%;
+}
+
+.topographic-avator-desc{
+    text-align: center;
+    font-size: 16px;
+    line-height: 48px;
+}
+
+/* complete */
+
+.complete{
+    width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 75px;
+}
+.complete-title{
+    text-align: center;
+}
+.complete-title-ch{
+    font-size: 30px;
+    line-height: 48px;
+}
+.complete-title-en{
+    font-size: 24px;
+}
+.complete-title-desc{
+    font-size: 16px;
+    line-height: 48px;
+}
+.complete-avator{
+    width: 100%;
+}
+.complete-avator img{
+    width: 100%;
+}

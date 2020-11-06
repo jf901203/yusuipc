@@ -169,7 +169,6 @@
 /* viewshow */
 .viewshow{
     width: 100%;
-    border:1px solid blue;
     background-image: url(../img/viewshow.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -181,6 +180,7 @@
 .viewshow-banner{
     width: 1400px;
     margin: 0 auto;
+    position: relative;
   
 }
 .swiper2{
@@ -243,19 +243,23 @@
     height: 100%;
 }
 
-.viewshow-banner{
-    position: relative;
+.button-prev,.button-next{
+  position: absolute;
+  top: 50%;
+  width: 27px;
+  height: 44px;
+  margin-top: -22px;
+  z-index: 10px;
+  cursor: pointer;
+  background-size: 27px 44px;
+  background-position: center;
+  background-repeat: no-repeat;
+  outline:none;
+  color: #fff;
+ 
 }
 
 
-
-.swiper-button-next{
-    color: #fff;
-}
-
-.swiper-button-prev{
-    color: #fff;
-}
 
 
 /* support */
